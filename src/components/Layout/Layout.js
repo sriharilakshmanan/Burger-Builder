@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Aux from "../../hoc/Aux";
+import Auxiliary from "../../hoc/Auxiliary";
 import classes from "./Layout.module.css";
 import Toolbar from "../Navigation/Toolbar/Toolbar";
 import SideDrawer from "../Navigation/SideDrawer/SideDrawer";
@@ -18,14 +18,14 @@ class Layout extends Component {
   };
   render() {
     return (
-      <Aux>
+      <Auxiliary>
         <Toolbar showSideDrawer={this.sideDrawerShowHandler} />
         <SideDrawer
           closeSideDrawer={this.sideDrawerCloseHandler}
           showSideDrawer={this.state.showSideDrawer}
         />
         <main className={classes.Content}>{this.props.children}</main>
-      </Aux>
+      </Auxiliary>
     );
   }
 }

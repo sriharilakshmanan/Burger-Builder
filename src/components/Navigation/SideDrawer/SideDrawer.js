@@ -2,7 +2,7 @@ import React from "react";
 import Logo from "../../Logo/Logo";
 import NavigationItems from "../NavigationItems/NavigationItems";
 import classes from "./SideDrawer.module.css";
-import Aux from "../../../hoc/Aux";
+import Auxiliary from "../../../hoc/Auxiliary";
 import Backdrop from "../../UI/Backdrop/Backdrop";
 
 const SideDrawer = (props) => {
@@ -12,7 +12,7 @@ const SideDrawer = (props) => {
   }
 
   return (
-    <Aux>
+    <Auxiliary>
       <Backdrop
         showBackdrop={props.showSideDrawer}
         hideBackdrop={props.closeSideDrawer}
@@ -25,7 +25,7 @@ const SideDrawer = (props) => {
           <NavigationItems />
         </nav>
       </div>
-    </Aux>
+    </Auxiliary>
   );
 };
 

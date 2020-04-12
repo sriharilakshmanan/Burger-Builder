@@ -12,7 +12,7 @@ const controls = [
 const BuildControls = (props) => (
   <div className={classes.BuildControls}>
     <p>
-      Current Price: <strong>{props.price.toFixed(2)}</strong>
+      Current Price: $<strong>{props.price.toFixed(2)}</strong>
     </p>
     {controls.map((control) => (
       <BuildControl
@@ -28,7 +28,7 @@ const BuildControls = (props) => (
       disabled={!props.canPlaceOrder}
       onClick={props.purchaseHandler}
     >
-      Order Now
+      Order <i className="fas fa-check-circle"></i>
     </button>
   </div>
 );

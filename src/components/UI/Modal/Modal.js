@@ -1,6 +1,6 @@
 import React from "react";
 import classes from "./Modal.module.css";
-import Aux from "../../../hoc/Aux";
+import Auxiliary from "../../../hoc/Auxiliary";
 import Backdrop from "../Backdrop/Backdrop";
 const Modal = (props) => {
   const styles = [classes.Modal];
@@ -9,10 +9,10 @@ const Modal = (props) => {
     ? styles.push(classes.ShowModal)
     : styles.push(classes.HideModal);
   return (
-    <Aux>
+    <Auxiliary>
       <Backdrop showBackdrop={props.showModal} hideBackdrop={props.hideModal} />
       <div className={styles.join(" ")}>{props.children}</div>
-    </Aux>
+    </Auxiliary>
   );
 };
 

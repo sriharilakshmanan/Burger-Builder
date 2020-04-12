@@ -14,10 +14,7 @@ const Burger = (props) => {
           //Second .map() function returns the list of jsx elements for every ingredientType
           .map((_, index) => {
             return (
-              <BurgerIngredient
-                key={type + index}
-                ingredientType={type}
-              />
+              <BurgerIngredient key={type + index} ingredientType={type} />
             );
           })
       );
@@ -32,7 +29,7 @@ const Burger = (props) => {
   }
 
   return (
-    <div className={classes.Burger}>
+    <div className={[classes.Burger, classes.styleScroll].join(" ")}>
       <BurgerIngredient ingredientType="bread-top" />
       {ingredientsList}
       <BurgerIngredient ingredientType="bread-bottom" />
