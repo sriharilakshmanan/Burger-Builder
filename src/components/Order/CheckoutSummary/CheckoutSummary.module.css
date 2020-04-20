@@ -4,6 +4,10 @@
   margin: auto;
 }
 
+.CheckoutSummary h2 {
+  margin-top: 80px;
+}
+
 @media (min-width: 600px) {
   .CheckoutSummary {
     width: 80%;

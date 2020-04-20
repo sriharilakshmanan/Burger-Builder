@@ -6,7 +6,7 @@ import classes from "./CheckoutSummary.module.css";
 const CheckoutSummary = (props) => {
   return (
     <div className={classes.CheckoutSummary}>
-      <h2>We hope you enjoy it! xD</h2>
+      <h2>Just a step away. We hope you enjoy it! xD</h2>
       <div style={{ width: "100%" }}>
         <Burger ingredients={props.ingredients} />
         {/* <Button onClick={props.checkoutCancel} btnType="Danger">

@@ -8,10 +8,14 @@
   padding: 10px;
 }
 
-.ContactData input {
-  display: block;
-  text-align: center;
-  margin: 5px auto;
+.ContactData h3 {
+  font-weight: bold;
+}
+
+.ContactData button:disabled {
+  background-color: gray;
+  cursor: not-allowed;
+  border: gray;
 }
 
 @media (min-width: 600px) {

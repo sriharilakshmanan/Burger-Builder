@@ -2,6 +2,12 @@ import React from "react";
 import classes from "./Order.module.css";
 
 const Order = (props) => {
+  const ingredientColors = {
+    bacon: "#ebc6c6",
+    cheese: "#ffe699",
+    meat: "#e6b3b3",
+    salad: "#c6ffb3"
+  };
   const ingredients = [];
   for (let ingredientKey in props.ingredients) {
     ingredients.push({
@@ -17,7 +23,10 @@ const Order = (props) => {
           display: "inline-block",
           margin: "8px",
           border: "1px solid black",
-          padding: "5px"
+          borderRadius: "5px",
+          padding: "5px",
+          backgroundColor: ingredientColors[igKey.type],
+          color: "black"
         }}
         key={igKey.type}
       >

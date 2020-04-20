@@ -29,7 +29,7 @@ class Orders extends Component {
   }
   render() {
     return (
-      <div>
+      <div style={{ marginTop: "80px" }}>
         {this.state.orders.map((order) => (
           <Order
             key={order.id}
