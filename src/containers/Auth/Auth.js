@@ -10,7 +10,6 @@ import { checkValidity } from "../../utils/utility";
 
 class Auth extends Component {
   state = {
-    showMessage: true,
     isRegister: false,
     controls: {
       email: {
@@ -43,10 +42,6 @@ class Auth extends Component {
       }
     }
   };
-
-  componentDidMount() {
-    setTimeout(() => this.setState({ showMessage: false }), 4000);
-  }
 
   authToggleHandler = () => {
     this.setState({
@@ -117,10 +112,6 @@ class Auth extends Component {
         Please Register/Login to continue
       </div>
     );
-
-    if (!this.state.showMessage) {
-      message = null;
-    }
 
     if (this.props.error) {
       errorMessage = (

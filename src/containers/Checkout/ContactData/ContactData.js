@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-//import Button from "../../../components/UI/Button/Button";
 import classes from "./ContactData.module.css";
 import Spinner from "../../../components/UI/Spinner/Spinner";
 import Input from "../../../components/UI/Input/Input";
@@ -157,7 +156,6 @@ class ContactData extends Component {
             }
           />
         ))}
-        {/* <Button btnType="Success">ORDER</Button> */}
         <button
           className="btn btn-primary btn-sm"
           disabled={!this.state.formIsValid}
