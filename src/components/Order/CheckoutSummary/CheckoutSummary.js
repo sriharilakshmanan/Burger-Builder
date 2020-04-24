@@ -7,6 +7,7 @@ const CheckoutSummary = (props) => {
   return (
     <div className={classes.CheckoutSummary}>
       <h2>Just a step away. We hope you enjoy it! xD</h2>
+      <hr />
       <div style={{ width: "100%" }}>
         <Burger ingredients={props.ingredients} />
         {/* <Button onClick={props.checkoutCancel} btnType="Danger">
@@ -15,10 +16,10 @@ const CheckoutSummary = (props) => {
         <Button onClick={props.checkoutContinue} btnType="Success">
           CONTINUE
         </Button> */}
-        <button onClick={props.checkoutCancel} className="btn-danger btn-md">
+        <button onClick={props.checkoutCancel} className="btn btn-danger">
           CANCEL
         </button>
-        <button onClick={props.checkoutContinue} className="btn-success btn-md">
+        <button onClick={props.checkoutContinue} className="btn btn-success">
           CONTINUE
         </button>
       </div>

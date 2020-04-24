@@ -28,7 +28,15 @@ const BuildControls = (props) => (
       disabled={!props.canPlaceOrder}
       onClick={props.purchaseHandler}
     >
-      Order <i className="fas fa-check-circle"></i>
+      {props.isAuthenticated ? (
+        <span>
+          Order <i className="fas fa-check-circle"></i>
+        </span>
+      ) : (
+        <span>
+          Login & Order <i className="fas fa-sign-in-alt"></i>
+        </span>
+      )}
     </button>
   </div>
 );

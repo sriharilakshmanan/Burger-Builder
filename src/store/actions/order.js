@@ -21,11 +21,11 @@ const purchaseBurgerStart = () => {
   };
 };
 
-export const purchaseBurger = (orderData, contactDataProps) => {
+export const purchaseBurger = (orderData, contactDataProps, token) => {
   return (dispatch) => {
     dispatch(purchaseBurgerStart());
     axios
-      .post("/orders.json", orderData)
+      .post("/orders.json?auth=" + token, orderData)
       .then((response) => {
         console.log(response.data);
         dispatch(purchaseBurgerSuccess(response.data.name, orderData));
@@ -58,11 +58,15 @@ const fetchOrdersFail = () => {
   };
 };
 
-export const fetchOrders = () => {
+// with redux-thunk we could check auth using a second argument getState function that we can get along with the dispatch function
+// it goes like this for example, getState().auth.token will give the token stored in the auth slice
+export const fetchOrders = (token, userId) => {
   return (dispatch) => {
     dispatch(fetchOrdersStart());
+    const queryParams =
+      "?auth=" + token + '&orderBy="userId"&equalTo="' + userId + '"';
     axios
-      .get("/orders.json")
+      .get("/orders.json" + queryParams)
       .then((response) => {
         console.log(response.data);
         const fetchedOrders = [];

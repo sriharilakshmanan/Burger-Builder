@@ -103,10 +103,11 @@ class ContactData extends Component {
     const orderData = {
       ingredients: this.props.ingredients,
       price: this.props.totalPrice.toFixed(2),
-      customer: formData
+      customer: formData,
+      userId: this.props.userId
     };
     console.log("[Contact Data] props:", this.props);
-    this.props.onPurchaseBurger(orderData, { ...this.props });
+    this.props.onPurchaseBurger(orderData, { ...this.props }, this.props.token);
   };
 
   checkValidity(value, rules) {
@@ -171,7 +172,10 @@ class ContactData extends Component {
           />
         ))}
         {/* <Button btnType="Success">ORDER</Button> */}
-        <button className="btn-info btn-sm" disabled={!this.state.formIsValid}>
+        <button
+          className="btn btn-primary btn-sm"
+          disabled={!this.state.formIsValid}
+        >
           ORDER
         </button>
       </form>
@@ -192,14 +196,16 @@ const mapStateToProps = (state) => {
   return {
     ingredients: state.burgerBuilder.ingredients,
     totalPrice: state.burgerBuilder.totalPrice,
-    loadSpinner: state.order.loadSpinner
+    loadSpinner: state.order.loadSpinner,
+    token: state.auth.token,
+    userId: state.auth.userId
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onPurchaseBurger: (orderData, contactDataProps) =>
-      dispatch(orderActions.purchaseBurger(orderData, contactDataProps))
+    onPurchaseBurger: (orderData, contactDataProps, token) =>
+      dispatch(orderActions.purchaseBurger(orderData, contactDataProps, token))
   };
 };
 

@@ -10,7 +10,8 @@ const INGREDIENT_PRICE = {
 const initialState = {
   ingredients: null,
   totalPrice: 4,
-  error: false
+  error: false,
+  buildingBurger: false
 };
 
 const addIngredient = (state, action) => {
@@ -25,7 +26,8 @@ const addIngredient = (state, action) => {
 
   const updatedState = {
     ingredients: updatedIngredients,
-    totalPrice: state.totalPrice + INGREDIENT_PRICE[action.ingredientName]
+    totalPrice: state.totalPrice + INGREDIENT_PRICE[action.ingredientName],
+    buildingBurger: true
   };
   return objectAssign(state, updatedState);
 };
@@ -39,7 +41,8 @@ const removeIngredient = (state, action) => {
       // dynamically accessing the property
       [action.ingredientName]: state.ingredients[action.ingredientName] - 1
     },
-    totalPrice: state.totalPrice - INGREDIENT_PRICE[action.ingredientName]
+    totalPrice: state.totalPrice - INGREDIENT_PRICE[action.ingredientName],
+    buildingBurger: true
   };
 };
 
@@ -49,7 +52,8 @@ const setIngredients = (state, action) => {
     ingredients: action.ingredients,
     // Resetting the error in case we had an error earlier, to avoid unexpected behaviour
     error: false,
-    totalPrice: 4
+    totalPrice: 4,
+    buildingBurger: false
   };
 };
 

@@ -1,0 +1,55 @@
+.Auth {
+  margin: 100px auto 0 auto;
+  width: 80%;
+  text-align: center;
+  box-shadow: 0 2px 3px grey;
+  border: 1px solid black;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.Auth button {
+  margin: 10px 0;
+}
+
+.Auth button:disabled {
+  background-color: gray;
+  cursor: not-allowed;
+  border: gray;
+}
+
+.elementToFadeInAndOut {
+  width: 80%;
+  margin: 20px auto;
+  -webkit-animation: fadeInOut 4s linear forwards;
+  animation: fadeInOut 4s linear forwards;
+}
+
+@-webkit-keyframes fadeInOut {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInOut {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@media (min-width: 600px) {
+  .Auth {
+    width: 500px;
+  }
+  .elementToFadeInAndOut {
+    width: 500px;
+  }
+}
