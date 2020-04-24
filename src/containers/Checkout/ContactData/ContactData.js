@@ -7,6 +7,7 @@ import { connect } from "react-redux";
 import withErrorHandler from "../../../hoc/withErrorHandler/withErrorHandler";
 import * as orderActions from "../../../store/actions/index";
 import axios from "../../../axios-orders";
+import { checkValidity } from "../../../utils/utility";
 class ContactData extends Component {
   state = {
     formIsValid: false,
@@ -106,22 +107,8 @@ class ContactData extends Component {
       customer: formData,
       userId: this.props.userId
     };
-    console.log("[Contact Data] props:", this.props);
     this.props.onPurchaseBurger(orderData, { ...this.props }, this.props.token);
   };
-
-  checkValidity(value, rules) {
-    let isValid = true;
-    if (rules.required) {
-      isValid = value.trim() !== "" && isValid;
-    }
-
-    if (rules.length) {
-      isValid = +value.length === +rules.length && isValid;
-    }
-
-    return isValid;
-  }
 
   onInputChangeHandler = (event, inputIdentifier) => {
     //cloning the state object
@@ -135,7 +122,7 @@ class ContactData extends Component {
     };
 
     updatedFormElement.value = event.target.value;
-    updatedFormElement.isValid = this.checkValidity(
+    updatedFormElement.isValid = checkValidity(
       updatedFormElement.value,
       updatedFormElement.validationRules
     );
@@ -146,7 +133,6 @@ class ContactData extends Component {
     for (let formElement in updatedOrderForm) {
       formIsValid = formIsValid && updatedOrderForm[formElement].isValid;
     }
-    console.log(formIsValid);
     this.setState({ orderForm: updatedOrderForm, formIsValid: formIsValid });
   };
   render() {

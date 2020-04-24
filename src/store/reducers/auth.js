@@ -1,5 +1,5 @@
 import * as actionTypes from "../actions/actionTypes";
-import { objectAssign } from "../utility";
+import { objectAssign } from "../../utils/utility";
 
 const initialState = {
   token: null,
