@@ -9,7 +9,7 @@ const withErrorHandler = (WrappedComponent, axios) => {
       error: null
     };
 
-    componentWillMount() {
+    componentDidMount() {
       // Global interceptors that intercept all the requests and responses and catch the errors.
       // First argument is the request/response object and the second argument is the error object.
       this.requestInterceptor = axios.interceptors.request.use(
@@ -32,9 +32,6 @@ const withErrorHandler = (WrappedComponent, axios) => {
     // This is to eject the interceptors that are attached to the WrappedComponent if the WrappedComponent is unmounted.
     // Else there will be memory leakage due to existing old interceptors.
     componentWillUnmount() {
-      console.log(
-        "[withErrorHandler]  componentWillUnmount - Ejecting interceptors"
-      );
       axios.interceptors.request.eject(this.requestInterceptor);
       axios.interceptors.request.eject(this.responseInterceptor);
     }
