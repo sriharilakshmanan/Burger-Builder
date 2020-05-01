@@ -3,9 +3,8 @@
   background-color: #703b09;
   display: flex;
   flex-flow: column;
-  box-shadow: 0 2px 1px #ccc;
   padding: 12px 0;
-  margin: 20% auto auto auto;
+  margin: auto;
   align-items: center;
   color: white;
 }
