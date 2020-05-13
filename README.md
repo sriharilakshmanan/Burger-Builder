@@ -1,3 +1,12 @@
+# Burger Builder
+
+![Burger Builder](src/assets/images/burger-builder-screenshot.png)
+
+References:
+https://www.udemy.com/course/react-the-complete-guide-incl-redux/
+
+URL: https://burger-builder-ab66d.web.app/
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
